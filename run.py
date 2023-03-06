@@ -6,11 +6,23 @@ def get_board_size():
     """
     Get the required size board from the user as int
     """
-    print("You can play a 2x2 (easy) or 3x3 (hard) grid.")
-    print("Enter either '2' for 2x2 or '3' for 3x3\n")
-    squares = int(input("What size grid would you like?: "))
-    print("Validating entry...\n")
-    verified = verify_board_size(squares)
+    while True:
+        print("You can play a 2x2 (easy) or 3x3 (hard) grid.")
+        print("Enter either '2' for 2x2 or '3' for 3x3\n")
+        squares = int(input("What size grid would you like?: "))
+        print("Validating entry...\n")
+        verified = verify_board_size(squares)
+
+        if verified:
+            print("Verified board size!")
+            # Referenced from:
+            # https://www.guru99.com/python-time-sleep-delay.html#3
+            time.sleep(1.5)
+            # Referenced from:
+            # https://stackoverflow.com/questions/2084508/clear-terminal-in-python
+            os.system('cls' if os.name == 'nt' else 'clear')
+            break
+    return squares
 
 
 def verify_board_size(squares):
