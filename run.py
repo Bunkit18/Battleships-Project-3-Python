@@ -45,12 +45,23 @@ def verify_board_size(squares):
     return True
 
 
+def play_sudoku(s):
+    """
+    Takes returned list of list from function and stores in variable board
+    Checks the number entered by the user and calls a function
+    which prints a sudoku board to the terminal.
+    Gets the user to enter the row and column number
+    Calls a function to change the board variable
+    """
+
+
 def main():
     """
     The main function for the sudoku program
     Runs all program functions
     """
-    get_board_size()
+    size = get_board_size()
+    play_sudoku(size)
 
 
 print("Welcome to Sudoku!\n")
