@@ -1,3 +1,7 @@
+import os
+import time
+
+
 def get_board_size():
     """
     Get the required size board from the user as int
@@ -15,6 +19,18 @@ def verify_board_size(squares):
     is either '2' or '3'.
     Otherwise, raises an exception and prints to terminal.
     """
+    try:
+        if squares not in (2, 3):  # Used tuple as immutable
+            raise ValueError(
+                f"Only '2' or '3' accepted. You entered {squares}"
+            )
+    except ValueError as v_e:
+        print(f"Invalid data: {v_e}, please try again.\n")
+        time.sleep(2)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        return False
+
+    return True
 
 
 def main():
