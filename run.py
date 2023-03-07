@@ -1,11 +1,6 @@
-# This project was developed over 8 days on Visual Studio Code and Github.
-# It wasnt committed immediately because i wasn't sure i wanted to stick
-# with a Sudoku project.
-# It was then added to the github repo and commit in the order it was created.
-# Credit goes to my python Discord server, who helped with debugging issues.
 import os
-import time
 import sys
+import time
 
 
 def get_board_size():
@@ -89,7 +84,7 @@ def play_sudoku(s):
         row = get_user_input("Enter the number of the row: ", s, board)
         col = get_user_input("Enter the number of the column: ", s, board)
         num = get_user_input("Enter the number to put in the cell: ", s, board)
-        
+
         check_num = check_user_num(s, row, col, num)
         if check_num == "Wrong Number":
             continue
@@ -342,6 +337,7 @@ def incorrect_message():
 def main():
     """
     The main function for the sudoku program
+    Takes input from the user and responds accordingly
     Runs all program functions
     """
     size = get_board_size()
