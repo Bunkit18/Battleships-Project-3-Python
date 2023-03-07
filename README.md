@@ -48,9 +48,15 @@ From a sudoku lover to all sudoku lovers, come and enjoy <a href="">**Sudoku**</
 
 * ## Site Structure 
 
-    TielBible is comprised of seven pages, with [Home](index.html) being the default loading page. The pages are as follows: [Variation](variation.html), [Behaviour](behaviour.html), [Diet](diet.html), [Vet Locations](vet.html) and [Contact](contact.html).
+    Sudoku is a game run entirely on the Command Line Interface (CLI), hosted on a single HTML webpage.
 
-    There is a pop-up form in the footer of every page which, alongside the form in the contact page, will lead to the [Thank You](thankyou.html) page. Longer pages have a fixed 'return-to-the-top' button on the right-handside for ease of access to the header and navigation bar. 
+    The user is able to input words or numbers into the CLI when prompted and may exit the application at any time by typing "quit". 
+
+    The user is prompted to choose their board size based on sudoku game complexity (either 2x2 or 3x3) and will be repeatedly prompted until a correct answer of 2 or 3 is given. 
+
+    The user is prompted for the row and column number consecutively for the cell they wish to add a number to. The user will be prompted again if an incorrect value in inputted.
+
+    The use can 'submit' their final answer to be checked. Depending on the final answer, the user will either be shown a congratulatory message with ASCII art, or a condolence message along with their final answer and the correct answer. 
 
     [Return to top](<#table-of-contents>)
 
