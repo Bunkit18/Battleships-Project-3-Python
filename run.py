@@ -223,6 +223,16 @@ def check_user_num(size, row, col, num):
             return "Wrong Number"
 
 
+def amend_board(board, row, col, num):
+    """
+    Changes the board list values to user defined numbers
+    """
+    row = int(row) - 1
+    col = int(col) - 1
+    num = int(num)
+    board[row][col] = num
+
+
 def check_if_submit(var, size, final_board):
     """
     Checks if the user enters 'submit' to finish the game.
