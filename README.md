@@ -34,17 +34,13 @@ From a sudoku lover to all sudoku lovers, come and enjoy <a href="">**Sudoku**</
 
 * ## User Stories
 
-    * As a user I want to be able to navigate through the whole site smoothly.
-    * As a user I want to understand the purpose of the site upon loading it.
-    * As a user, I want to be able to learn more about cockatiels.
-    * As a user, I want to be able to find relevant information on owning a cockatiel regardless of prior experience.
-    * As a user, I want to be able to learn the visual differences between different genders and colour variations of cockatiels.
-    * As a user, I want to be able to view examples of different defining features of a cockatiel.
-    * As a user, I want to be able to understand the behaviours and emotions of a cockatiel with clear image or video examples.
-    * As a user, I want to clearly understand the dietary needs of cockatiels and what food is considered toxic to them.
-    * As a user, I want to be able to view a live map of the United Kindom, that advises me on veterinary services for my cockatiel.
-    * As a user, I want to be able to provide feedback to TielBible based on my own experience of Cockatiels, that may be able to help others.
-    * As a user, I want to be able to connect with fellow users of TielBible through social media.
+    * As a user I want to be able to play a game of sudoku.
+    * As a user, I want to be able to enter numbers into a sudoku board of my choice in size.
+    * As a user, I want to be able to visually see the sudoku board as I play.
+    * As a user, I want to be able to have a clutter free visual space as I play.
+    * As a user, I want to be able to see the changes in numbers i put in on a sudoku board.
+    * As a user, I want to be able to check my final answer and see if it is right or wrong.
+    * As a user, I want to be able to quit the game of sudoku at any time.
 
 [Return to top](<#table-of-contents>)
 
