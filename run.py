@@ -50,6 +50,12 @@ def verify_board_size(squares):
     return True
 
 
+def get_user_input(prompt, size, board):
+    """
+    Calls a function to check if the user enters 'quit'
+    """
+
+
 def play_sudoku(s):
     """
     Takes returned list of list from function and stores in variable board
@@ -58,6 +64,68 @@ def play_sudoku(s):
     Gets the user to enter the row and column number
     Calls a function to change the board variable
     """
+    board = sudoku_board(s)
+
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        if s == 2:
+            print_2x2_board(board)
+        else:
+            print_3x3_board(board)
+        print("Enter the number of the column or row you want to change")
+        print("Enter 'submit' to check the final answer.")
+        print("Enter 'quit' to quit the game at any time.\n")
+        row = get_user_input("Enter the number of the row: ", s, board)
+        col = get_user_input("Enter the number of the column: ", s, board)
+        num = get_user_input("Enter the number to put in the cell: ", s, board)
+
+
+def print_2x2_board(board):
+    """
+    Iterates through a list of lists and prints the list
+    in a 2x2 format
+    """
+    print("     1   2      3   4   ")
+    print("  + ------- ++ ------- +")
+
+    for i, row in enumerate(board):
+        print(f"{i+1}", end=" ")
+        print("|", end="")
+        for num in row[:2]:
+            print("{:3} ".format(num), end="")
+        print(" ||", end="")
+        for num in row[2:]:
+            print("{:3} ".format(num), end="")
+        print(" |")
+
+        if i == 1:
+            print("  + ------- ++ ------- +")
+
+    print("  + ------- ++ ------- +\n")
+
+
+def print_3x3_board(board):
+    """
+    Iterates through a list of lists and prints the list
+    in a 3x3 format
+    """
+    print("     1   2   3      4   5   6      7   8   9   ")
+    for i, row in enumerate(board):
+        if i % 3 == 0:
+            print("  + ----------- ++ ----------- ++ ----------- +")
+        print(f"{i+1}", end=" ")
+        print("|", end="")
+        for num in row[:3]:
+            print("{:3} ".format(num), end="")
+        print(" ||", end="")
+        for num in row[3:6]:
+            print("{:3} ".format(num), end="")
+        print(" ||", end="")
+        for num in row[6:]:
+            print("{:3} ".format(num), end="")
+        print(" |")
+
+    print("  + ----------- ++ ----------- ++ ----------- +\n")
 
 
 def sudoku_board(size):
