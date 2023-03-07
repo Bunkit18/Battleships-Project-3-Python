@@ -54,6 +54,16 @@ def get_user_input(prompt, size, board):
     """
     Calls a function to check if the user enters 'quit'
     """
+    while True:
+        try:
+            user_input = input(prompt)
+            check_if_quit(user_input)
+            check_if_submit(user_input, size, board)
+            return user_input
+        except ValueError as v_e:
+            print(f"Invalid Entry: {v_e}, please try again.\n")
+            time.sleep(1.5)
+            os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def play_sudoku(s):
@@ -126,6 +136,18 @@ def print_3x3_board(board):
         print(" |")
 
     print("  + ----------- ++ ----------- ++ ----------- +\n")
+
+
+def check_if_quit(var):
+    """
+    Checks if the user enters 'quit' to quit the game.
+    """
+
+
+def check_if_submit(var, size, final_board):
+    """
+    Checks if the user enters 'submit' to finish the game.
+    """
 
 
 def sudoku_board(size):
