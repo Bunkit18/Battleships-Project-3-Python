@@ -5,6 +5,7 @@
 # Credit goes to my python Discord server, who helped with debugging issues.
 import os
 import time
+import sys
 
 
 def get_board_size():
@@ -142,6 +143,11 @@ def check_if_quit(var):
     """
     Checks if the user enters 'quit' to quit the game.
     """
+    if var == "quit":
+        print("\nThanks for playing!")
+        time.sleep(2)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        sys.exit()
 
 
 def check_if_submit(var, size, final_board):
