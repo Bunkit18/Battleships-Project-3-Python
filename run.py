@@ -277,6 +277,35 @@ def correct_answer(size):
         return BOARD_3
 
 
+def check_answer(final_board, correct_ans, size):
+    """
+    Checks the final board against the correct answer.
+    Calls a function depending on the result.
+    """
+    if final_board == correct_ans:
+        congratulation_message()
+        print("\nThanks for playing Sudoku!")
+        time.sleep(2)
+        sys.exit()
+    else:
+        incorrect_message()
+        if size == 2:
+            print_2x2_board(correct_ans)
+            print("Heres what you submitted: ")
+            print_2x2_board(final_board)
+            print("\nThanks for playing Sudoku!")
+            time.sleep(2)
+            sys.exit()
+        else:
+            print_3x3_board(correct_ans)
+            print("Heres what you submitted: \n")
+            print_3x3_board(final_board)
+            time.sleep(2)
+            print("\nThanks for playing Sudoku!")
+            time.sleep(2)
+            sys.exit()
+
+
 def main():
     """
     The main function for the sudoku program
