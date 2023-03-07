@@ -6,7 +6,8 @@ Sudoku will provide an interface in which the user can input their choice in boa
 
 From a sudoku lover to all sudoku lovers, come and enjoy <a href="">**Sudoku**</a>.
 
-![Tielbible-responsivity](assets/images/tielbible-responsive.png)
+<!-- Photo from Pixabay.com -->
+![Sudoku-Readme-Hero-Image](assets/images/sudoku.jpg)
 
 # Table of Contents
 
