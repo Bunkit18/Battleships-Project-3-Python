@@ -89,6 +89,43 @@ def play_sudoku(s):
         row = get_user_input("Enter the number of the row: ", s, board)
         col = get_user_input("Enter the number of the column: ", s, board)
         num = get_user_input("Enter the number to put in the cell: ", s, board)
+        
+        check_num = check_user_num(s, row, col, num)
+        if check_num == "Wrong Number":
+            continue
+
+        amend_board(board, row, col, num)
+
+
+def sudoku_board(size):
+    """
+    Stores list of list for sudoku game,
+    depending on the size of the board
+    """
+    def_num = 0
+    board_2 = [
+        [def_num, 2, 4, def_num],
+        [1, def_num, def_num, 3],
+        [4, def_num, def_num, 2],
+        [def_num, 1, 3, def_num]
+    ]
+
+    board_3 = [
+        [def_num, def_num, def_num, def_num, 5, 6, def_num, def_num, def_num],
+        [def_num, 6, 4, 2, def_num, def_num, def_num, def_num, def_num],
+        [def_num, 8, def_num, 9, 1, 4, def_num, def_num, 6],
+        [def_num, 3, 1, def_num, def_num, def_num, def_num, 2, def_num],
+        [6, def_num, 8, def_num, def_num, def_num, 1, def_num, 3],
+        [def_num, 5, def_num, def_num, def_num, def_num, 8, 6, def_num],
+        [8, def_num, def_num, 6, 2, 9, def_num, 4, def_num],
+        [def_num, def_num, def_num, def_num, def_num, 7, 2, 9, def_num],
+        [def_num, def_num, def_num, 5, 8, def_num, def_num, def_num, def_num]
+    ]
+
+    if size == 2:
+        return board_2
+    else:
+        return board_3
 
 
 def print_2x2_board(board):
@@ -150,41 +187,53 @@ def check_if_quit(var):
         sys.exit()
 
 
+def check_user_num(size, row, col, num):
+    """
+    Checks the size of the playing grid.
+    Checks if the number entered by the user conforms
+    to the numbers used in the grid
+    If the number conforms, change the list variable to user number
+    """
+    r_num = int(row)
+    c_num = int(col)
+    u_num = int(num)
+    if size == 2:
+        try:
+            if not (1 <= r_num <= 4 and 1 <= c_num <= 4 and 1 <= u_num <= 4):
+                raise ValueError(
+                    "Only numbers 1-4 accepted."
+                )
+        except ValueError as e:
+            print(f"\nInvalid Entry: {e}, You entered {r_num, c_num, u_num}.")
+            print("please try again.\n")
+            time.sleep(2)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            return "Wrong Number"
+    else:
+        try:
+            if not (1 <= r_num <= 9 and 1 <= c_num <= 9 and 1 <= u_num <= 9):
+                raise ValueError(
+                    "Only numbers 1-9 accepted."
+                )
+        except ValueError as e:
+            print(f"\nInvalid Entry: {e}, You entered {r_num, c_num, u_num}.")
+            print("please try again.\n")
+            time.sleep(2)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            return "Wrong Number"
+
+
 def check_if_submit(var, size, final_board):
     """
     Checks if the user enters 'submit' to finish the game.
     """
-
-
-def sudoku_board(size):
-    """
-    Stores list of list for sudoku game,
-    depending on the size of the board
-    """
-    def_num = 0
-    board_2 = [
-        [def_num, 2, 4, def_num],
-        [1, def_num, def_num, 3],
-        [4, def_num, def_num, 2],
-        [def_num, 1, 3, def_num]
-    ]
-
-    board_3 = [
-        [def_num, def_num, def_num, def_num, 5, 6, def_num, def_num, def_num],
-        [def_num, 6, 4, 2, def_num, def_num, def_num, def_num, def_num],
-        [def_num, 8, def_num, 9, 1, 4, def_num, def_num, 6],
-        [def_num, 3, 1, def_num, def_num, def_num, def_num, 2, def_num],
-        [6, def_num, 8, def_num, def_num, def_num, 1, def_num, 3],
-        [def_num, 5, def_num, def_num, def_num, def_num, 8, 6, def_num],
-        [8, def_num, def_num, 6, 2, 9, def_num, 4, def_num],
-        [def_num, def_num, def_num, def_num, def_num, 7, 2, 9, def_num],
-        [def_num, def_num, def_num, 5, 8, def_num, def_num, def_num, def_num]
-    ]
-
-    if size == 2:
-        return board_2
-    else:
-        return board_3
+    if var == "submit":
+        correct_ans = correct_answer(size)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("Checking your answer...")
+        time.sleep(3)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        check_answer(final_board, correct_ans, size)
 
 
 def correct_answer(size):
