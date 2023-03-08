@@ -178,7 +178,7 @@ def check_if_quit(var):
     if var == "quit":
         print("\nThanks for playing!")
         time.sleep(2)
-        os.execl(sys.executable, sys.executable, *sys.argv)
+        os.system('cls' if os.name == 'nt' else 'clear')
         sys.exit()
 
 
