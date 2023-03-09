@@ -22,8 +22,8 @@ From a sudoku lover to all sudoku lovers, come and enjoy <a href="">**Sudoku**</
 * [**Data Model**](<#data-model>)
 * [**Testing**](<#testing>)
     * [**Known Bugs or Issues**](<#known-bugs-or-issues>)
-    * [**Deployment**](<#deployment>)
-    * [**Credits**](<#credits>)
+* [**Deployment**](<#deployment>)
+* [**Credits**](<#credits>)
 
 
 # How To Play
@@ -103,7 +103,11 @@ If the player wants to play the game again, they click on the orange button that
 
 # Data Model 
 
+I used a superlist, or a list of lists, as my data model, with a list being a built-in data model. The game contains two superlists in two functions, correct_answer which stores the correct answer of the final sudoku board, and sudoku_board which stores the starting sudoku board layout. A variable called board is assigned the value of sudoku_board and stores the players final game board for checking against correct_answer. 
 
+These lists store between 4 and 9 lists depending on game size, which store the sudoku numbers in a row. 
+
+For future development, a class named Sudoku will be made and the lists, relevant variables and functions will be stored in the class for collectrive storage and access, which was not implemented due to time constraints.
 
 [Return to top](<#table-of-contents>)
 
@@ -115,7 +119,9 @@ I have manually tested this project by doing the following:
 
     * Given Invalid inputs: numbers outside of accepted range
 
-    * Tested in my local terminal and the Code Institute Heroku Terminal
+    * Tested in my local terminal and the Heroku Terminal
+
+    * Had my partner use and test the program.
 
 * ## Bugs
 
