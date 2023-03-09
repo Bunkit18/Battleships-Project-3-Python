@@ -161,7 +161,7 @@ This project was deployed using Heroku's terminal for applications.
 
 Further credits are due to:
 
-* [Stack Overflow](https://stackoverflow.com/) and [W3Schools](https://www.w3schools.com/) for constant reference and assistance on python code possibilities.
+* [Stack Overflow](https://stackoverflow.com/) for constant reference and assistance on python code possibilities.
 
 * Fellow python peers on the Python Discord channel, who  reviewed my code when an issue arose and provided feedback on how to resolve the issue.
 
